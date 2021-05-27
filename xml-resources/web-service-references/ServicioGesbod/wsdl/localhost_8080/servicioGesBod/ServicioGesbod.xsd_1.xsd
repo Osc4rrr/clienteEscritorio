@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.4.0 (wsit240-7e98ff4; 2017-08-03T21:19:54+0200) JAXWS-RI/2.3.0 JAXWS-API/2.3.0 JAXB-RI/2.3.0 JAXB-API/2.3.0 svn-revision#unknown. --><xs:schema xmlns:tns="http://servicios/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://servicios/">
+
+<xs:element name="actualizarStock" type="tns:actualizarStock"/>
+
+<xs:element name="actualizarStockResponse" type="tns:actualizarStockResponse"/>
+
+<xs:element name="consultarProductos" type="tns:consultarProductos"/>
+
+<xs:element name="consultarProductosResponse" type="tns:consultarProductosResponse"/>
+
+<xs:element name="getProducto" type="tns:getProducto"/>
+
+<xs:element name="getProductoResponse" type="tns:getProductoResponse"/>
+
+<xs:element name="saludo" type="tns:saludo"/>
+
+<xs:element name="saludoResponse" type="tns:saludoResponse"/>
+
+<xs:element name="sumar" type="tns:sumar"/>
+
+<xs:element name="sumarResponse" type="tns:sumarResponse"/>
+
+<xs:complexType name="consultarProductos">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="consultarProductosResponse">
+<xs:sequence>
+<xs:element name="Producto" type="tns:producto" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="producto">
+<xs:sequence>
+<xs:element name="autor" type="xs:string" minOccurs="0"/>
+<xs:element name="codigo_producto" type="xs:int"/>
+<xs:element name="nombre_producto" type="xs:string" minOccurs="0"/>
+<xs:element name="precio" type="xs:int"/>
+<xs:element name="stock" type="xs:int"/>
+<xs:element name="vigencia" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarStock">
+<xs:sequence>
+<xs:element name="codigo_produicto" type="xs:int"/>
+<xs:element name="cantidadProducto" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarStockResponse">
+<xs:sequence>
+<xs:element name="resultado" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getProducto">
+<xs:sequence>
+<xs:element name="codigoProducto" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getProductoResponse">
+<xs:sequence>
+<xs:element name="Producto" type="tns:producto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="sumar">
+<xs:sequence>
+<xs:element name="digito1" type="xs:int"/>
+<xs:element name="digito2" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="sumarResponse">
+<xs:sequence>
+<xs:element name="resultado" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="saludo">
+<xs:sequence>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="apellido_paterno" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="saludoResponse">
+<xs:sequence>
+<xs:element name="saludar" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
